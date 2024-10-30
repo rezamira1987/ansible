@@ -1,0 +1,12 @@
+- name: install apache
+  hosts: node2
+  become: yes
+  tasks:
+    - name: Install apache httpd
+      ansible.builtin.apt:
+        name: apache2
+        state: present
+    - name: Start service httpd, if not started
+      ansible.builtin.service:
+        name: apache2
+        state: restarted

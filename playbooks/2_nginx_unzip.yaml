@@ -1,0 +1,10 @@
+- name: install apache
+  hosts: node1
+  become: yes
+  tasks:
+    - name: Install multiple package
+      apt:
+        name:
+          - nginx
+          - unzip
+        state: present
