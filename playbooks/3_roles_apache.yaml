@@ -1,0 +1,6 @@
+---
+- name: Configure web servers
+  hosts: all
+  become: true  # Run tasks with sudo privileges if necessary
+  roles:
+    - apache
